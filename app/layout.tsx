@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio CV - Alexandre Développeur Fullstack',
+  title: 'Portfolio CV - LiantsoRak Développeur Fullstack',
   description: 'Portfolio CV d\'un développeur fullstack spécialisé en TypeScript, React et Node.js. Découvrez mes projets, expérience et compétences.',
   generator: 'v0.app',
   icons: {
