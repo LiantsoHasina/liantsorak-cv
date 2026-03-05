@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use, useEffect } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Sidebar } from '@/components/Sidebar';
 import { SectionHeader } from '@/components/SectionHeader';
 import { ExperienceCard } from '@/components/ExperienceCard';
@@ -15,12 +15,24 @@ import Header from '@/components/Header';
 export default function Portfolio() {
   const { push } = useRouter()
 
+  const [visible, setVisible] = useState(false)
+
   useEffect(() => {
-    push("/#skills")
+    const onScroll = () => {
+      setVisible(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const scrollTop = () => {    
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <div className={styles.portfolio}>      
+    <div className={styles.portfolio}>     
+      <div className={`${styles.toTop} ${visible ? styles.visible : ''}`} onClick={scrollTop} />
       <Sidebar
         name={cvData.personal.name}
         title={cvData.personal.title}

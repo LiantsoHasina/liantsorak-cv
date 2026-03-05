@@ -10,6 +10,36 @@
   }
 }
 
+.toTop {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+
+  width: 1em;
+  height: 1em;
+  padding: 1em;
+  border-radius: 100%;  
+  background-image: url(../public/to-top.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80% 80%;
+  // opacity: .6;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(white, .3);
+  border: 1px solid #333;  
+  transition: opacity 0.25s ease, transform 0.25s ease;  
+
+  &.visible {
+  @media(max-width: $breakpoint-mobile) {
+    // .visible {
+      pointer-events: auto;
+      opacity: .6;
+    // }
+  }
+}
+}
+
 .main {
   flex: 1;
   margin-left: 320px;
