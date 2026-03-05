@@ -24,6 +24,9 @@
   padding-bottom: $spacing-sm;
   border-bottom: 2px solid $color-primary;
   display: inline-block;
+  &.dark {
+    color: #fff;
+  }
 }
 
 .items {

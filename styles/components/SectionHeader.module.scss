@@ -5,6 +5,14 @@
   flex-direction: column;
   gap: $spacing-md;
   margin-bottom: $spacing-2xl;
+  &.dark {
+    .title {
+      color: #fff;
+    }
+    .subtitle {
+      color: #bbb;
+    }
+  }
 }
 
 .title {

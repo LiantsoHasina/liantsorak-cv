@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from '@/styles/components/Sidebar.module.scss';
-import { Contact } from '@/data/cv-data';
+import { Contact, CvData } from '@/data/cv-data';
 import Header from './Header';
 
 interface SidebarProps {
@@ -10,10 +10,14 @@ interface SidebarProps {
   title: string;
   bio: string;
   contact: Contact;
+  language: keyof CvData
   to: (val: string) => void
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to, language }) => {
+  
+  const isFrench = useMemo(() => language === "fr", [language])
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.header}>
@@ -24,7 +28,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to 
 
       {/* <p className={styles.bio}>{bio}</p> */}
 
-      <Header toRef={(val) => to(val)} />
+      <Header toRef={(val) => to(val)} lang={language as "eng" | "fr"} />
 
       <nav className={styles.contact}>
         <h3 className={styles.contactTitle}>Contact</h3>
@@ -33,7 +37,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to 
             <li>
               <span className={styles.label}>LinkedIn</span>
               <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
-                Voir mon profil
+                {
+                  isFrench ? "Voir mon profil" :
+                  "Visit my profile"
+                }
               </a>
             </li>
           )}
@@ -43,7 +50,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to 
           </li>
           {contact.phone && (
             <li>
-              <span className={styles.label}>Téléphone</span>
+              <span className={styles.label}>{ isFrench ? "Téléphone" : "Phone" }</span>
               <a href={`tel:${contact.phone}`}>{contact.phone}</a>
             </li>
           )}
@@ -51,14 +58,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to 
             <span className={styles.label}>Localisation</span>
             <span>{contact.location}</span>
           </li> */}
-          {contact.website && (
+          {/* {contact.website && (
             <li>
-              <span className={styles.label}>Site Web</span>
+              <span className={styles.label}>{ isFrench ? "Site Web" : "Website" }</span>
               <a href={contact.website} target="_blank" rel="noopener noreferrer">
                 Visiter
               </a>
             </li>
-          )}
+          )} */}
           {contact.github && (
             <li>
               <span className={styles.label}>GitHub</span>

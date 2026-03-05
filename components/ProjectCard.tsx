@@ -2,15 +2,17 @@
 
 import React from 'react';
 import styles from '@/styles/components/ProjectCard.module.scss';
-import { Project } from '@/data/cv-data';
+import { CvData, Project } from '@/data/cv-data';
 
 interface ProjectCardProps {
   project: Project;
+  isLight: boolean
+  lang: keyof CvData
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, isLight, lang }) => {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${!isLight ? styles.dark : ""}`}>
       <h3 className={styles.title}>{project.title}</h3>
       <p className={styles.description}>{project.description}</p>
 
@@ -31,14 +33,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className={styles.links}>
         {project.link && (
           <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
-            Voir le site →
+            { lang === "fr" ? "Voir le site" : "Visit the website" } →
           </a>
         )}
-        {project.github && (
+        {/* {project.github && (
           <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
             Code source →
           </a>
-        )}
+        )} */}
       </div>
     </div>
   );

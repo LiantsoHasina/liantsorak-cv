@@ -4,6 +4,11 @@
   display: flex;
   min-height: 100vh;
   background: $color-background;  
+  transition: all .2s ease-out;
+
+  &.dark {
+    background: #333;
+  }
 
   @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
@@ -43,9 +48,50 @@
 .main {
   flex: 1;
   margin-left: 320px;
+  margin-block: 1em;
   padding: $spacing-2xl;
   max-width: 1200px;
 
+  .options {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    gap: .5em;
+    top: 1em;
+    .mode {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80% 80%;
+      width: 1.5em;
+      height: 1.5em;
+
+      &.light {
+        background-image: url(../public/mode-dark.svg);
+      }
+      &.dark {
+        background-image: url(../public/light-mode.svg);
+      }      
+    }
+
+    .lang {
+      text-transform: uppercase;
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px #333;
+      padding: .4em;
+      width: 40px;
+      user-select: none;
+      cursor: pointer;
+      font-size: small;
+      border-radius: .3em;
+      &.dark {
+        color: #fff;
+        box-shadow: 0 0 0 1px #ddd;
+      }
+    }
+  }
   .section {
     margin-bottom: $spacing-3xl;
 
@@ -78,6 +124,10 @@
   color: $color-text-secondary;
   margin: 0;
   max-width: 900px;
+
+  &.dark {
+    color: #bbb;
+  }
 }
 
 .content {
