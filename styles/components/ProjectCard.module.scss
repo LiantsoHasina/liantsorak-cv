@@ -1,0 +1,106 @@
+@import '@/styles/theme';
+
+.card {
+  @include card;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: 0 4px 12px rgba($color-primary, 0.1);
+  }
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.description {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+  margin: 0;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  li {
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+    color: $color-text-secondary;
+    padding-left: $spacing-lg;
+    position: relative;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $color-success;
+      font-weight: bold;
+    }
+  }
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.tag {
+  display: inline-block;
+  user-select: none;
+  background: $color-background-secondary;
+  color: $color-text-primary;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border: 1px solid $color-border;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: $color-primary-subtle;
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.links {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  margin-top: $spacing-sm;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  color: $color-primary;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-normal;
+  padding: 0.25rem;
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+    border-radius: $border-radius-sm;
+  }
+}

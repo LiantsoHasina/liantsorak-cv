@@ -1,0 +1,60 @@
+@import '@/styles/theme';
+
+.card {
+  @include card;
+  margin-bottom: $spacing-lg;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: 0 2px 8px rgba($color-primary, 0.08);
+  }
+}
+
+.header {
+  @include flex-between;
+  gap: $spacing-md;
+  margin-bottom: $spacing-sm;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.degree {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.institution {
+  font-size: $font-size-base;
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+}
+
+.year {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+
+  @media (max-width: $breakpoint-tablet) {
+    white-space: normal;
+  }
+}
+
+.location {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin: 0;
+}
+
+.gpa {
+  font-size: $font-size-sm;
+  color: $color-success;
+  font-weight: $font-weight-semibold;
+  margin: $spacing-sm 0 0 0;
+}

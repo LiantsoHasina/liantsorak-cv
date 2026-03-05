@@ -1,0 +1,132 @@
+@import '@/styles/theme';
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  background: $color-primary;
+  color: white;
+  overflow-y: auto;
+  padding: $spacing-2xl $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $spacing-2xl;
+
+  @media (max-width: $breakpoint-tablet) {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: $spacing-xl $spacing-lg;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.header {
+  @include flex-column;
+  align-items: center;
+  gap: $spacing-lg;
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.name {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  margin: 0;
+  line-height: $line-height-tight;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.bio {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  opacity: 0.9;
+  margin: 0;
+  text-align: left;
+}
+
+.contact {
+  width: 100%;
+  // margin-top: auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 0;
+  }
+}
+
+.contactTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 $spacing-md 0;
+  opacity: 0.8;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  li {
+    @include flex-column;
+    gap: 0.25rem;
+  }
+}
+
+.label {
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+  font-weight: $font-weight-semibold;
+}
+
+.contactList a {
+  color: white;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  word-break: break-word;
+  transition: opacity $transition-normal;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+    border-radius: $border-radius-sm;
+  }
+}
+
+.contactList span {
+  font-size: $font-size-sm;
+  color: white;
+}

@@ -1,0 +1,31 @@
+@import '@/styles/theme';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-2xl;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin: 0;
+  line-height: $line-height-tight;
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin: 0;
+  line-height: $line-height-normal;
+}
+
+.divider {
+  height: 3px;
+  width: 60px;
+  background: $color-primary;
+  border-radius: $border-radius-md;
+  margin: 0;
+}
