@@ -137,7 +137,7 @@ const fr = {
         "Conception et intégration des interfaces mobiles",
         "Mise en place de la synchronisation avec approche offline-first",
         "Optimisation des requêtes et amélioration des temps de chargement",
-        "Gérance du backoffice"
+        "Gérance du backoffice et des features backend"
       ],
       technologies: ["React Native", "TypeScript", "Express.js", "Realm"],
       link: "https://www.promabio.com/",
@@ -247,7 +247,7 @@ const eng = {
         "Back-office management using Symfony",
       ],
       technologies: ["TypeScript", "React", "Symfony"],
-      link: "https://rion-r7.wooddevelop.fr",
+      link: "https://www.cica-bois.fr/",
     },
     {
       id: "proj-2",
@@ -268,11 +268,24 @@ const eng = {
         "Mobile application for field data collection with offline support and automatic synchronization.",
       highlights: [
         "Design and integration of mobile interfaces",
-        "Implementation of offline-first synchronization",
+        "Implementation of offline-first synchronization feature",
         "Query optimization and improved loading performance",
+        "Backoffice and backend features management"
       ],
       technologies: ["React Native", "TypeScript", "Express.js", "Realm"],
       link: "https://www.promabio.com/",
+      
+    },
+    {
+      id: "proj-4",
+      title: "Local Hotel Website",
+      description: "Redesign and update of a local hotel website.",
+      highlights: [
+        "Integration of new UI views",
+        "Responsive design's implementation and management"
+      ],
+      technologies: ["React", "Material UI"],
+      link: "https://www.zomatel-madagascar.com/",
     },
   ] as Project[],
   skills: [
