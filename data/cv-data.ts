@@ -137,9 +137,21 @@ const fr = {
         "Conception et intégration des interfaces mobiles",
         "Mise en place de la synchronisation avec approche offline-first",
         "Optimisation des requêtes et amélioration des temps de chargement",
+        "Gérance du backoffice"
       ],
       technologies: ["React Native", "TypeScript", "Express.js", "Realm"],
       link: "https://www.promabio.com/",
+    },
+    {
+      id: "proj-4",
+      title: "Site d'hôtelerie local",
+      description: "Refonte et mise à jour d'un site d'hôtellerie",
+      highlights: [
+        "Intégration des nouveaux vues(UI)",
+        "Gérance de la responsivité"
+      ],
+      technologies: ["React", "Material UI"],
+      link: "https://www.zomatel-madagascar.com/",
     },
   ] as Project[],
   skills: [
