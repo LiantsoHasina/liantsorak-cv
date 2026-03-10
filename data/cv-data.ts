@@ -116,7 +116,7 @@ const fr = {
         "Gestion du back-office avec Symfony",
       ],
       technologies: ["TypeScript", "React", "Symfony"],
-      link: "https://rion-r7.wooddevelop.fr",
+      link: "https://www.cica-bois.fr/",
     },
     {
       id: "proj-2",
