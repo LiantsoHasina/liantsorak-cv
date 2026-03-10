@@ -14,6 +14,14 @@
   flex-direction: column;
   justify-content: space-between;
   gap: $spacing-2xl;
+  transition: all .2s ease-in-out;
+
+  @media (min-width: $breakpoint-tablet) {
+    &.collapsed {
+      width: 0px;
+      padding: 0;
+    }
+  }
 
   @media (max-width: $breakpoint-tablet) {
     position: static;
@@ -21,6 +29,12 @@
     height: auto;
     padding: $spacing-xl $spacing-lg;
     margin-bottom: $spacing-2xl;
+    
+    
+    &.collapsed {
+      height: 0;
+      padding: 0;
+    }
   }
 }
 

@@ -19,6 +19,7 @@ export default function Portfolio() {
   const [isLight, setIsLight] = useState(true)
   const [visible, setVisible] = useState(false)
   const [language, setLanguage] = useState<keyof CvData>("fr")
+  const [collapse, setCollapse] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -35,8 +36,9 @@ export default function Portfolio() {
 
   return (
     <div className={`${styles.portfolio} ${!isLight ? styles.dark : ''}`}>     
-      <div className={`${styles.toTop} ${visible ? styles.visible : ''}`} onClick={scrollTop} />
+      <div className={`${styles.toTop} ${visible ? styles.visible : ''}`} onClick={scrollTop} />      
       <Sidebar
+        colllapse={collapse}
         name={cvData[language].personal.name}
         title={cvData[language].personal.title}
         bio={cvData[language].personal.bio}
@@ -45,9 +47,13 @@ export default function Portfolio() {
         to={(val) => push(val)}
       />
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${collapse ? styles.collapse : ""}`}>
         {/* Summary Section */}        
         <div className={styles.options}>
+          <div 
+            className={`${styles.collapsing} ${collapse ? styles.on : ""} ${isLight ? styles.light : styles.dark}`} 
+            onClick={() => setCollapse(!collapse)} 
+          />
           <Toggle variant={"outline"} onClick={() => setIsLight(!isLight)}>
             <div className={`${styles.mode} ${isLight ? styles.light : styles.dark}`} />
           </Toggle>

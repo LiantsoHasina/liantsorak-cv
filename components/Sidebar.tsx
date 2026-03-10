@@ -11,15 +11,16 @@ interface SidebarProps {
   bio: string;
   contact: Contact;
   language: keyof CvData
+  colllapse: boolean
   to: (val: string) => void
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to, language }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ name, title, bio, contact, to, colllapse, language }) => {
   
   const isFrench = useMemo(() => language === "fr", [language])
-
+  
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${colllapse ? styles.collapsed : ""}`}>
       <div className={styles.header}>
         <div className={styles.avatar}></div>
         <h1 className={styles.name}>{name}</h1>
