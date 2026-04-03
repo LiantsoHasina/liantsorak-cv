@@ -2,8 +2,8 @@
 
 .card {
   @include card;
-  margin-bottom: $spacing-xl;
-
+  margin-bottom: $spacing-xl;  
+  
   &:hover {
     border-color: $color-primary;
     box-shadow: 0 4px 12px rgba($color-primary, 0.1);
