@@ -1,158 +1,159 @@
-@import '@/styles/theme';
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 360px;
-  height: 100vh;
-  background: $color-primary;
-  color: white;
-  overflow-y: auto;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: $spacing-2xl;
-  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
-
-  @media (min-width: $breakpoint-tablet) {
-    &.collapsed {
-      width: 0px;
-      padding: 0;
-      box-shadow: none;
-    }
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 2.5rem 1.5rem;
-    margin-bottom: $spacing-2xl;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-
-    &.collapsed {
-      height: 0;
-      padding: 0;
-      box-shadow: none;
-    }
-  }
-}
-
-.header {
-  @include flex-column;
-  align-items: center;
-  gap: $spacing-lg;
-  text-align: center;
-}
-
-.avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 4px solid rgba(255, 255, 255, 0.25);
-  flex-shrink: 0;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    width: 110px;
-    height: 110px;
-  }
-}
-
-.name {
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.title {
-  font-size: 1.125rem;
-  font-weight: 500;
-  opacity: 0.92;
-  margin: 0;
-  letter-spacing: 0.01em;
-}
-
-.bio {
-  font-size: $font-size-sm;
-  line-height: $line-height-relaxed;
-  opacity: 0.9;
-  margin: 0;
-  text-align: left;
-}
-
-.contact {
-  width: 100%;
-  // margin-top: auto;
-
-  @media (max-width: $breakpoint-tablet) {
-    margin-top: 0;
-  }
-}
-
-.contactTitle {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 $spacing-md 0;
-  opacity: 0.8;
-}
-
-.contactList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
-
-  li {
-    @include flex-column;
-    gap: 0.25rem;
-  }
-}
-
-.label {
-  font-size: $font-size-xs;
-  text-transform: uppercase;
-  opacity: 0.7;
-  letter-spacing: 0.05em;
-  font-weight: $font-weight-semibold;
-}
-
-.contactList a {
-  color: white;
-  text-decoration: none;
-  font-size: $font-size-sm;
-  word-break: break-word;
-  transition: opacity $transition-normal;
-
-  &:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.5);
-    outline-offset: 2px;
-    border-radius: $border-radius-sm;
-  }
-}
-
-.contactList span {
-  font-size: $font-size-sm;
-  color: white;
-}
+// OLD DESIGN - COMMENTED OUT
+// @import '@/styles/theme';
+// 
+// .sidebar {
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   width: 360px;
+//   height: 100vh;
+//   background: $color-primary;
+//   color: white;
+//   overflow-y: auto;
+//   padding: 3rem 2rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   gap: $spacing-2xl;
+//   transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+//   box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+// 
+//   @media (min-width: $breakpoint-tablet) {
+//     &.collapsed {
+//       width: 0px;
+//       padding: 0;
+//       box-shadow: none;
+//     }
+//   }
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     position: static;
+//     width: 100%;
+//     height: auto;
+//     padding: 2.5rem 1.5rem;
+//     margin-bottom: $spacing-2xl;
+//     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+// 
+//     &.collapsed {
+//       height: 0;
+//       padding: 0;
+//       box-shadow: none;
+//     }
+//   }
+// }
+// 
+// .header {
+//   @include flex-column;
+//   align-items: center;
+//   gap: $spacing-lg;
+//   text-align: center;
+// }
+// 
+// .avatar {
+//   width: 140px;
+//   height: 140px;
+//   border-radius: 50%;
+//   background: rgba(255, 255, 255, 0.12);
+//   border: 4px solid rgba(255, 255, 255, 0.25);
+//   flex-shrink: 0;
+//   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+//   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// 
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     width: 110px;
+//     height: 110px;
+//   }
+// }
+// 
+// .name {
+//   font-size: 1.75rem;
+//   font-weight: 800;
+//   margin: 0;
+//   line-height: 1.2;
+//   letter-spacing: -0.02em;
+//   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+// }
+// 
+// .title {
+//   font-size: 1.125rem;
+//   font-weight: 500;
+//   opacity: 0.92;
+//   margin: 0;
+//   letter-spacing: 0.01em;
+// }
+// 
+// .bio {
+//   font-size: $font-size-sm;
+//   line-height: $line-height-relaxed;
+//   opacity: 0.9;
+//   margin: 0;
+//   text-align: left;
+// }
+// 
+// .contact {
+//   width: 100%;
+//   // margin-top: auto;
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     margin-top: 0;
+//   }
+// }
+// 
+// .contactTitle {
+//   font-size: $font-size-lg;
+//   font-weight: $font-weight-bold;
+//   text-transform: uppercase;
+//   letter-spacing: 0.05em;
+//   margin: 0 0 $spacing-md 0;
+//   opacity: 0.8;
+// }
+// 
+// .contactList {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+//   display: flex;
+//   flex-direction: column;
+//   gap: $spacing-sm;
+// 
+//   li {
+//     @include flex-column;
+//     gap: 0.25rem;
+//   }
+// }
+// 
+// .label {
+//   font-size: $font-size-xs;
+//   text-transform: uppercase;
+//   opacity: 0.7;
+//   letter-spacing: 0.05em;
+//   font-weight: $font-weight-semibold;
+// }
+// 
+// .contactList a {
+//   color: white;
+//   text-decoration: none;
+//   font-size: $font-size-sm;
+//   word-break: break-word;
+//   transition: opacity $transition-normal;
+// 
+//   &:hover {
+//     opacity: 0.8;
+//     text-decoration: underline;
+//   }
+// 
+//   &:focus-visible {
+//     outline: 2px solid rgba(255, 255, 255, 0.5);
+//     outline-offset: 2px;
+//     border-radius: $border-radius-sm;
+//   }
+// }
+// 
+// .contactList span {
+//   font-size: $font-size-sm;
+//   color: white;
+// }

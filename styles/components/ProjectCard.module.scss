@@ -1,243 +1,244 @@
-@import '@/styles/theme';
-
-.card {
-  background: $color-background;
-  border: 2px solid rgba($color-border, 0.5);
-  border-radius: 12px;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  min-height: 400px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: $color-primary;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 3;
-  }
-
-  &.dark {
-    .overlay {
-      background: #f5f5f5;
-    }
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    &:hover {
-      border-color: rgba($color-primary, 0.4);
-      box-shadow: 0 12px 40px rgba($color-primary, 0.12);
-      transform: translateY(-4px);
-
-      &::after {
-        transform: scaleX(1);
-      }
-
-      .overlay {
-        opacity: 0;
-      }
-
-      .content {
-        opacity: 0.3;
-        user-select: none;
-      }
-
-      .link {
-        opacity: 1;
-        visibility: visible;
-        user-select: auto;
-      }
-    }
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    min-height: auto;
-  }
-}
-
-.backgroundImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $color-background;
-  z-index: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  flex: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $color-text-primary;
-  margin: 0;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
-}
-
-.description {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: $color-text-secondary;
-  margin: 0;
-}
-
-.highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
-
-  li {
-    font-size: $font-size-sm;
-    line-height: $line-height-normal;
-    color: $color-text-secondary;
-    padding-left: $spacing-lg;
-    position: relative;
-
-    &::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: $color-success;
-      font-weight: bold;
-    }
-  }
-}
-
-.technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-sm;
-}
-
-.tag {
-  display: inline-block;
-  user-select: none;
-  background: rgba($color-primary, 0.08);
-  color: $color-primary;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  letter-spacing: 0.02em;
-
-  &:hover {
-    background: $color-primary;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba($color-primary, 0.3);
-  }
-}
-
-.link {
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 4;
-
-  // Desktop: Centered button, hidden by default, visible on card hover
-  @media (min-width: $breakpoint-tablet) {
-    color: white;
-    background: $color-primary;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    letter-spacing: 0.02em;
-    box-shadow: 0 4px 16px rgba($color-primary, 0.3);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background: $color-primary-dark;
-      box-shadow: 0 6px 24px rgba($color-primary, 0.4);
-      transform: translate(-50%, -50%) scale(1.05);
-    }
-
-    &:focus-visible {
-      @include focus-ring;
-    }
-  }
-
-  // Mobile: Old underlined link design at bottom, always visible
-  @media (max-width: $breakpoint-tablet) {
-    color: $color-primary;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 0.5rem 2rem;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    opacity: 1;
-    visibility: visible;
-    margin-top: auto;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0.25rem;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: $color-primary;
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    &:hover {
-      color: $color-primary-dark;
-      transform: translateX(4px);
-
-      &::after {
-        width: calc(100% - 24px);
-      }
-    }
-
-    &:focus-visible {
-      @include focus-ring;
-      border-radius: $border-radius-sm;
-    }
-  }
-}
+// OLD DESIGN - COMMENTED OUT
+// @import '@/styles/theme';
+// 
+// .card {
+//   background: $color-background;
+//   border: 2px solid rgba($color-border, 0.5);
+//   border-radius: 12px;
+//   margin-bottom: 0;
+//   display: flex;
+//   flex-direction: column;
+//   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//   position: relative;
+//   overflow: hidden;
+//   min-height: 400px;
+// 
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: 3px;
+//     background: $color-primary;
+//     transform: scaleX(0);
+//     transform-origin: left;
+//     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//     z-index: 3;
+//   }
+// 
+//   &.dark {
+//     .overlay {
+//       background: #f5f5f5;
+//     }
+//   }
+// 
+//   @media (min-width: $breakpoint-tablet) {
+//     &:hover {
+//       border-color: rgba($color-primary, 0.4);
+//       box-shadow: 0 12px 40px rgba($color-primary, 0.12);
+//       transform: translateY(-4px);
+// 
+//       &::after {
+//         transform: scaleX(1);
+//       }
+// 
+//       .overlay {
+//         opacity: 0;
+//       }
+// 
+//       .content {
+//         opacity: 0.3;
+//         user-select: none;
+//       }
+// 
+//       .link {
+//         opacity: 1;
+//         visibility: visible;
+//         user-select: auto;
+//       }
+//     }
+//   }
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     min-height: auto;
+//   }
+// }
+// 
+// .backgroundImage {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   z-index: 0;
+// }
+// 
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: $color-background;
+//   z-index: 1;
+//   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// }
+// 
+// .content {
+//   position: relative;
+//   z-index: 2;
+//   padding: 2rem;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.25rem;
+//   flex: 1;
+//   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// }
+// 
+// .title {
+//   font-size: 1.5rem;
+//   font-weight: 700;
+//   color: $color-text-primary;
+//   margin: 0;
+//   letter-spacing: -0.015em;
+//   line-height: 1.3;
+// }
+// 
+// .description {
+//   font-size: 0.95rem;
+//   line-height: 1.7;
+//   color: $color-text-secondary;
+//   margin: 0;
+// }
+// 
+// .highlights {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+//   display: flex;
+//   flex-direction: column;
+//   gap: $spacing-sm;
+// 
+//   li {
+//     font-size: $font-size-sm;
+//     line-height: $line-height-normal;
+//     color: $color-text-secondary;
+//     padding-left: $spacing-lg;
+//     position: relative;
+// 
+//     &::before {
+//       content: '✓';
+//       position: absolute;
+//       left: 0;
+//       color: $color-success;
+//       font-weight: bold;
+//     }
+//   }
+// }
+// 
+// .technologies {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: $spacing-sm;
+// }
+// 
+// .tag {
+//   display: inline-block;
+//   user-select: none;
+//   background: rgba($color-primary, 0.08);
+//   color: $color-primary;
+//   padding: 0.4rem 0.85rem;
+//   border-radius: 6px;
+//   font-size: 0.75rem;
+//   font-weight: 600;
+//   border: none;
+//   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+//   letter-spacing: 0.02em;
+// 
+//   &:hover {
+//     background: $color-primary;
+//     color: white;
+//     transform: translateY(-2px);
+//     box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+//   }
+// }
+// 
+// .link {
+//   text-decoration: none;
+//   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//   z-index: 4;
+// 
+//   // Desktop: Centered button, hidden by default, visible on card hover
+//   @media (min-width: $breakpoint-tablet) {
+//     color: white;
+//     background: $color-primary;
+//     font-size: 1rem;
+//     font-weight: 700;
+//     padding: 1rem 2rem;
+//     border-radius: 8px;
+//     letter-spacing: 0.02em;
+//     box-shadow: 0 4px 16px rgba($color-primary, 0.3);
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     opacity: 0;
+//     visibility: hidden;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+// 
+//     &:hover {
+//       background: $color-primary-dark;
+//       box-shadow: 0 6px 24px rgba($color-primary, 0.4);
+//       transform: translate(-50%, -50%) scale(1.05);
+//     }
+// 
+//     &:focus-visible {
+//       @include focus-ring;
+//     }
+//   }
+// 
+//   // Mobile: Old underlined link design at bottom, always visible
+//   @media (max-width: $breakpoint-tablet) {
+//     color: $color-primary;
+//     font-size: 0.9rem;
+//     font-weight: 600;
+//     padding: 0.5rem 2rem;
+//     position: relative;
+//     display: inline-flex;
+//     align-items: center;
+//     opacity: 1;
+//     visibility: visible;
+//     margin-top: auto;
+// 
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       bottom: 0.25rem;
+//       left: 0;
+//       width: 0;
+//       height: 2px;
+//       background: $color-primary;
+//       transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//     }
+// 
+//     &:hover {
+//       color: $color-primary-dark;
+//       transform: translateX(4px);
+// 
+//       &::after {
+//         width: calc(100% - 24px);
+//       }
+//     }
+// 
+//     &:focus-visible {
+//       @include focus-ring;
+//       border-radius: $border-radius-sm;
+//     }
+//   }
+// }

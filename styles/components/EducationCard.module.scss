@@ -1,85 +1,86 @@
-@import '@/styles/theme';
-
-.card {
-  background: $color-background;
-  border: none;
-  border-left: 4px solid transparent;
-  border-radius: 0;
-  padding: 1.5rem 0 1.5rem 2rem;
-  margin-bottom: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: $color-border;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  &:hover {
-    border-left-color: $color-primary;
-    transform: translateX(8px);
-
-    &::before {
-      background: $color-primary;
-      width: 6px;
-    }
-  }
-}
-
-.header {
-  @include flex-between;
-  gap: $spacing-md;
-  margin-bottom: $spacing-sm;
-
-  @media (max-width: $breakpoint-tablet) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.degree {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: $color-text-primary;
-  margin: 0;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-}
-
-.institution {
-  font-size: 1.05rem;
-  color: $color-primary;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 0.005em;
-}
-
-.year {
-  font-size: $font-size-sm;
-  color: $color-text-secondary;
-  font-weight: $font-weight-medium;
-  white-space: nowrap;
-
-  @media (max-width: $breakpoint-tablet) {
-    white-space: normal;
-  }
-}
-
-.location {
-  font-size: $font-size-sm;
-  color: $color-text-secondary;
-  margin: 0;
-}
-
-.gpa {
-  font-size: $font-size-sm;
-  color: $color-success;
-  font-weight: $font-weight-semibold;
-  margin: $spacing-sm 0 0 0;
-}
+// OLD DESIGN - COMMENTED OUT
+// @import '@/styles/theme';
+// 
+// .card {
+//   background: $color-background;
+//   border: none;
+//   border-left: 4px solid transparent;
+//   border-radius: 0;
+//   padding: 1.5rem 0 1.5rem 2rem;
+//   margin-bottom: 0;
+//   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//   position: relative;
+// 
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     width: 4px;
+//     background: $color-border;
+//     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//   }
+// 
+//   &:hover {
+//     border-left-color: $color-primary;
+//     transform: translateX(8px);
+// 
+//     &::before {
+//       background: $color-primary;
+//       width: 6px;
+//     }
+//   }
+// }
+// 
+// .header {
+//   @include flex-between;
+//   gap: $spacing-md;
+//   margin-bottom: $spacing-sm;
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+// }
+// 
+// .degree {
+//   font-size: 1.35rem;
+//   font-weight: 700;
+//   color: $color-text-primary;
+//   margin: 0;
+//   letter-spacing: -0.01em;
+//   line-height: 1.3;
+// }
+// 
+// .institution {
+//   font-size: 1.05rem;
+//   color: $color-primary;
+//   font-weight: 600;
+//   margin: 0;
+//   letter-spacing: 0.005em;
+// }
+// 
+// .year {
+//   font-size: $font-size-sm;
+//   color: $color-text-secondary;
+//   font-weight: $font-weight-medium;
+//   white-space: nowrap;
+// 
+//   @media (max-width: $breakpoint-tablet) {
+//     white-space: normal;
+//   }
+// }
+// 
+// .location {
+//   font-size: $font-size-sm;
+//   color: $color-text-secondary;
+//   margin: 0;
+// }
+// 
+// .gpa {
+//   font-size: $font-size-sm;
+//   color: $color-success;
+//   font-weight: $font-weight-semibold;
+//   margin: $spacing-sm 0 0 0;
+// }
