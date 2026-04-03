@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio CV - LiantsoRak Développeur Fullstack',
-  description: 'Portfolio CV d\'un développeur fullstack spécialisé en TypeScript, React et Node.js. Découvrez mes projets, expérience et compétences.',
+  title: 'Portfolio - Liantsoa Rak | Fullstack TypeScript Developer',
+  description: 'Portfolio of a fullstack developer specialized in TypeScript, React and Node.js. Discover my projects, experience and skills.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -37,7 +39,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="font-sans antialiased">
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

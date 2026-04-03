@@ -1,0 +1,47 @@
+.footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-on-glass);
+  margin-top: 2rem;
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.content {
+  background: var(--card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: var(--card-glass-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px var(--glass-shadow);
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-on-glass);
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.builtWith {
+  font-size: 0.75rem;
+  color: var(--text-on-glass);
+  opacity: 0.7;
+
+  .highlight {
+    color: var(--accent-primary);
+    font-weight: 600;
+  }
+}
