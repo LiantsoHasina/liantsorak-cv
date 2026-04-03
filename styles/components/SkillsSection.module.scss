@@ -3,11 +3,11 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: $spacing-xl;
+  gap: 2.5rem;
 
   @media (max-width: $breakpoint-tablet) {
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
+    gap: 2rem;
   }
 }
 
@@ -17,13 +17,27 @@
 }
 
 .category {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: $color-text-primary;
-  margin: 0;
-  padding-bottom: $spacing-sm;
-  border-bottom: 2px solid $color-primary;
+  margin: 0 0 1.25rem 0;
+  padding-bottom: 0.625rem;
+  border-bottom: 3px solid $color-primary;
   display: inline-block;
+  letter-spacing: -0.01em;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba($color-primary, 0.2);
+    transform: scaleX(1.2);
+  }
+
   &.dark {
     color: #fff;
   }
@@ -37,21 +51,21 @@
 
 .skill {
   display: inline-block;
-  background: $color-background-secondary;
+  background: rgba($color-primary, 0.06);
   color: $color-text-primary;
-  padding: $spacing-sm $spacing-md;
-  border-radius: $border-radius-lg;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  border: 1px solid $color-border;
-  transition: all $transition-normal;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
+  letter-spacing: 0.01em;
 
   &:hover {
     background: $color-primary;
     color: white;
-    border-color: $color-primary;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba($color-primary, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba($color-primary, 0.25);
   }
 }

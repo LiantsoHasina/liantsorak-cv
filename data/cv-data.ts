@@ -78,8 +78,8 @@ const fr = {
       company: "Fihary Soft",
       location: "Fianarantsoa",
       startDate: "Janv. 2023",
-      endDate: "Présent",
-      current: true,
+      endDate: "Mars 2026",
+      current: false,
       description: [
         "Assurer la qualité et la maintenabilité du code via des revues de code et l’application de bonnes pratiques",
         "Concevoir, intégrer et maintenir des interfaces complexes pour accueillir et utiliser une scène 3D, ainsi que son back-office",
@@ -208,8 +208,8 @@ const eng = {
       company: "Fihary Soft",
       location: "Fianarantsoa",
       startDate: "Jan 2023",
-      endDate: "Present",
-      current: true,
+      endDate: "Mars 2026",
+      current: false,
       description: [
         "Ensure code quality and maintainability through code reviews and best practices",
         "Design, integrate, and maintain complex interfaces to host and interact with a 3D scene and its back-office",

@@ -20,7 +20,7 @@ const Header: React.FC<Props> = ({ toRef, lang }) => {
   return <div className={styles.header}>
     {
       data.map(
-        ({ label, value }) => <div className={styles.link} onClick={() => toRef(value)}>
+        ({ label, value }, i) => <div key={`${label}+${i}`} className={styles.link} onClick={() => toRef(value)}>
           { label[lang] }
       </div>
       )
