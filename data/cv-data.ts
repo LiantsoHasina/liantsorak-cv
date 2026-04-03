@@ -65,7 +65,7 @@ const fr = {
     name: "RAKOTOARIMAMPIANINA Liantsoa Hasina",
     title: "Développeur Fullstack TypeScript",
     bio: "Développeur passionné spécialisé dans la construction d'applications web modernes et scalables avec TypeScript, React et Node.js.",
-    image: "",
+    image: "./avatar.jpeg",
   },
   contact: {
     linkedin: "https://www.linkedin.com/in/liantsoa-rak/",
