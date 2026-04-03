@@ -10,6 +10,7 @@
   /* Glass effect - using less bright colors */
   --glass-bg: rgba(245, 245, 250, 0.4);
   --glass-border: rgba(230, 230, 240, 0.5);
+  --glass-border-dark: rgba(0, 0, 0, 0.08);
   --glass-shadow: rgba(0, 0, 0, 0.1);
 
   /* Text colors - high contrast for readability */
@@ -35,6 +36,7 @@
   /* Glass effect - darker */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
   --glass-shadow: rgba(0, 0, 0, 0.3);
 
   /* Text colors */
