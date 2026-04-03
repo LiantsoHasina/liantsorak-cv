@@ -16,6 +16,7 @@ export interface Project {
   description: string;
   technologies: string[];
   link?: string;
+  image?: string;
   github?: string;
   highlights: string[];
 }
@@ -109,6 +110,7 @@ const fr = {
       id: "proj-1",
       title: "Plateforme de modélisation 3D",
       description: "Application web permettant aux clients de planifier un design intérieur et d'estimer son coût.",
+      // image: "/projects/nirvatia.png",
       highlights: [
         "Conception de l'interface et intégration de l'espace 3D avec les menus",
         "Ajout des logiques et fonctionnalités liées aux modèles 3D",
@@ -240,6 +242,7 @@ const eng = {
       title: "3D Modeling Platform",
       description:
         "Web application allowing clients to plan interior designs and estimate their costs.",
+      // image: "/projects/nirvatia.png",
       highlights: [
         "Interface design and integration of the 3D environment with navigation menus",
         "Implementation of logic and features related to 3D models",
